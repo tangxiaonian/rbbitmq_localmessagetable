@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tang.order.mapper.OrdersMapper">
+  <resultMap id="BaseResultMap" type="com.tang.order.domain.Orders">
+    <!--@mbg.generated generated on Sat Apr 11 14:08:09 CST 2020.-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="order_createtime" jdbcType="TIMESTAMP" property="orderCreatetime" />
+    <result column="order_state" jdbcType="INTEGER" property="orderState" />
+    <result column="order_money" jdbcType="DOUBLE" property="orderMoney" />
+    <result column="order_id" jdbcType="VARCHAR" property="orderId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated generated on Sat Apr 11 14:08:09 CST 2020.-->
+    id, `name`, order_createtime, order_state, order_money, order_id
+  </sql>
+</mapper>

@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: order-service
+  rabbitmq:
+    host: 192.168.108.127
+    port: 5672
+    username: guest
+    password: guest
+    publisher-confirm-type: CORRELATED   #开启消息确认回调机制
+    publisher-returns: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/tx_rabbit_one?serverTimezone=GMT%2B8
+    username: root
+    password: 721000
+    type: com.zaxxer.hikari.HikariDataSource
+  cloud:
+    consul:
+      discovery:
+        enabled: true
+        service-name: order-service
+      host: 127.0.0.1
+      port: 8500
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+server:
+  port: 8081
+
+mybatis:
+  type-aliases-package: com.tang.stock.domain
+  mapper-locations: classpath:/mapper/*.xml

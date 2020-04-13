@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: stock-service
+  rabbitmq:
+    host: 192.168.108.127
+    port: 5672
+    username: guest
+    password: guest
+    listener:
+      simple:
+        acknowledge-mode: manual  #手动应答
+        retry:  # 重试机制
+          enabled: true
+          max-attempts: 3
+          initial-interval: 3000
+  cloud:
+    consul:
+      discovery:
+        enabled: true
+        service-name: stock-service
+      host: 127.0.0.1
+      port: 8500
+  datasource:
+    url: jdbc:mysql://localhost:3306/tx_rabbit_two?serverTimezone=GMT%2B8
+    username: root
+    password: 721000
+    type: com.zaxxer.hikari.HikariDataSource
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+server:
+  port: 8083
+
+mybatis:
+  type-aliases-package: com.tang.order.domian
+  mapper-locations: classpath:/mapper/*.xml

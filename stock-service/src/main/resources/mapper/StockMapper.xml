@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tang.stock.mapper.StockMapper">
+  <resultMap id="BaseResultMap" type="com.tang.stock.domain.Stock">
+    <!--@mbg.generated generated on Sat Apr 11 14:08:48 CST 2020.-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="order_id" jdbcType="VARCHAR" property="orderId" />
+    <result column="stock" jdbcType="INTEGER" property="stock" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated generated on Sat Apr 11 14:08:48 CST 2020.-->
+    id, order_id, stock
+  </sql>
+</mapper>
